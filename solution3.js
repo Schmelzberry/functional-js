@@ -6,6 +6,7 @@
 
 // Output: "3ab2c4da"
 
+// WITHOUT RECURSION
 
 function stringCompress(string) {
   let compressedArray = [];  // results array

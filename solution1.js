@@ -9,7 +9,7 @@
 // Output: "Jasmine%20Ann%20Jones"
 
 
-// Without Recursion
+// WITHOUT RECURSION
 
 function urlFormat(string) {
   let stringArray = string.split(""); // string => array of letters

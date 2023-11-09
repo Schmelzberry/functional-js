@@ -6,7 +6,7 @@
 
 // Output: [7, 9, "hi", 12, 53]
 
-// Without Recursion
+// WITHOUT RECURSION
 
 function noDupes(nums) { // function expects an array of numbers as starting argument
   let noDuping = [];  // results array to push into

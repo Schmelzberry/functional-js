@@ -29,9 +29,16 @@ function noDupes(nums, index = 0, noDuping = []) {
 
   const currentNum = nums[index];
 
-  // Use array spread to create a new array with the current element. trying to be stateless by using ...
-  const updatedArray = [...noDuping, currentNum];
+  // Check if the current element is not already in the noDuping array
+  if (!noDuping.includes(currentNum)) {
+    // Use array spread to create a new array with the current element
+    const updatedArray = [...noDuping, currentNum];
 
-  // Recursive call with the next index and the updated array, which is a copy of the empty array with new info
-  return noDupes(nums, index + 1, updatedArray);
+    // Recursive call with the next index and the updated array
+    return noDupes(nums, index + 1, updatedArray);
+  } else {
+    // If the current element is a duplicate, skip it and proceed with the next index
+    return noDupes(nums, index + 1, noDuping);
+  }
 }
+

@@ -48,12 +48,13 @@ function transformChar(char) { // function expects a character
 
 // WITH RECURSION - one function
 
-function urlRecurse2(string, transform = char => char, index = 0) { // attempt at writing less code to achieve 
+function urlRecurse(string, transform = char => char, index = 0) { // attempt at writing less code to achieve 
   if (index === string.length) {                                    // same result
     return "";
   }
 
   const currentChar = transform(string[index]);
 
-  return currentChar + urlRecurse2(string, transform, index + 1);
+  return currentChar + urlRecurse(string, transform, index + 1);
 }
+

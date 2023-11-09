@@ -12,17 +12,17 @@
 // Without Recursion
 
 function urlFormat(string) {
-  let stringArray = string.split("");
-  let letterArray = [];
+  let stringArray = string.split(""); // string => array of letters
+  let letterArray = []; // results array to push() into
 
-  stringArray.forEach(function(element) {
+  stringArray.forEach(function(element) { // check for whitespace, replace with %20 if present
     if (element === " ") {
       element = "%20"
     }
-    letterArray.push(element);
+    letterArray.push(element); // each letter gets checked and moved into a second array
   });
 
-  let stringifiedUrl = letterArray.join("");
+  const stringifiedUrl = letterArray.join("");  // Adds all the elements of url array back to a string
 
   return stringifiedUrl;
 

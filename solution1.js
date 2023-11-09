@@ -22,8 +22,8 @@ function urlFormat(string) {
     letterArray.push(element);
   });
 
-  const stringifiedUrl = letterArray.toString();
+  let stringifiedUrl = letterArray.join("");
 
-  return finalUrl;
+  return stringifiedUrl;
 
 }

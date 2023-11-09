@@ -10,6 +10,8 @@
 
 // Output: true
 
+// WITHOUT RECURSION
+
 function uniqueString(string) {
 
   let stringCheck = new Set();      // sets only allow unique elements, duplicates are ignored inherently

@@ -31,5 +31,9 @@ function selectionSort(array) { // expects an array of numbers
         minIndex = j;
       }
     }
+    // Swap the found minimum element with the first element of the unsorted part
+    
+    [array[i], array[minIndex]] = [array[minIndex], array[i]];
   }
+    return array;
 }

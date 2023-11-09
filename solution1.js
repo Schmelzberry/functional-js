@@ -27,3 +27,33 @@ function urlFormat(string) {
   return stringifiedUrl;
 
 }
+
+// WITH RECURSION - two functions
+
+function urlRecurse(string, index = 0) {
+  if (index === string.length) {
+    return ""; // Base case: reached the end of the string
+  }
+
+  const currentChar = transformChar(string[index]);
+
+  // Recursive call with the next index
+  return currentChar + urlRecurse(string, index + 1);
+}
+
+function transformChar(char) { // function expects a character
+  return char === " " ? "%20" : char; // return char, if it's an empty string, replace with %20, otherwise, 
+                                      // return the character
+} 
+
+// WITH RECURSION - one function
+
+function urlRecurse2(string, transform = char => char, index = 0) { // attempt at writing less code to achieve 
+  if (index === string.length) {                                    // same result
+    return "";
+  }
+
+  const currentChar = transform(string[index]);
+
+  return currentChar + urlRecurse2(string, transform, index + 1);
+}

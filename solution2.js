@@ -20,3 +20,18 @@ function noDupes(nums) { // function expects an array of numbers as starting arg
   return noDuping;
 }
 
+// WITH RECURSION
+
+function noDupes(nums, index = 0, noDuping = []) {
+  if (index === nums.length) {
+    return noDuping; // Base case: reached the end of the array
+  }
+
+  const currentNum = nums[index];
+
+  // Use array spread to create a new array with the current element. trying to be stateless by using ...
+  const updatedArray = [...noDuping, currentNum];
+
+  // Recursive call with the next index and the updated array, which is a copy of the empty array with new info
+  return noDupes(nums, index + 1, updatedArray);
+}

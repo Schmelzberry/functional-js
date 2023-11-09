@@ -23,3 +23,47 @@ function stringCompress(string) {
 
   return compressedArray.join(""); // transform array into a string
 }
+
+// WITH RECURSION
+
+
+function stringCompress(input, index = 0, count = 1, currentChar = input[0], result = "") {
+  if (index === input.length - 1) {
+    return result + count + currentChar;
+  }
+
+  if (input[index] === input[index + 1]) {
+    return stringCompress(input, index + 1, count + 1, currentChar, result);
+  } 
+  
+  else {
+    count;
+    const newResult = result + count + currentChar;
+    return stringCompress(input, index + 1, 1, input[index + 1], newResult);
+  }
+}
+// Curry the function #1
+
+function curriedStringCompress2(input) {
+  return function(index) {
+    return function(count) {
+      return function(currentChar) {
+        return function(result) {
+          return stringCompress2(input, index, count, currentChar, result);
+        };
+      };
+    };
+  };
+}
+
+// Curry the function #2
+
+const curriedStringCompress2 = // a variable 
+(input) => 
+(index = 0) => 
+(count = 1) => 
+(currentChar = input[0]) => 
+(result = "") => 
+{
+  return stringCompress2(input, index, count, currentChar, result);
+};

@@ -6,11 +6,13 @@
 
 // Output: [7, 9, "hi", 12, 53]
 
-function noDupes(nums) {
-  let noDuping = []; 
+// Without Recursion
 
-  nums.forEach(function(num) {
-    if (!noDuping.includes(num)) {
+function noDupes(nums) { // function expects an array of numbers as starting argument
+  let noDuping = [];  // results array to push into
+
+  nums.forEach(function(num) { // forEach loop to check if there are duplicates by using includes() method
+    if (!noDuping.includes(num)) { // if the results array doesn't already contain the element, push it
       noDuping.push(num);
     } 
   });

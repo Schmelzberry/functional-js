@@ -1,6 +1,6 @@
 # Functional 'Whiteboarding' Solutions
 
-#### Applying Javascript to various programming problems using both OOP and functional approaches.
+#### Applying Javascript to various programming problems using both OOP and functional approaches. I answered Question #2 - Array Deduping.
 
 #### By Jake Elsberry
 
@@ -18,7 +18,7 @@ Input: "Jasmine Ann Jones"
 
 Output: "Jasmine%20Ann%20Jones"
 ```
-#### Question #2
+#### Question #2 - Problem I presented
 ```
 Question #2: Array Deduping
 Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.

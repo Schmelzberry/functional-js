@@ -1,6 +1,12 @@
 // Question #2: Array Deduping
 // Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
 
+// Clarification/Discussion - can an array always be assumed? Is Javascript a good language?
+
+// Function Target - A filtered array of numbers without duplicates
+
+// edge cases: not an array, special characters, capitalized strings 
+
 // Example
 // Input: [7, 9, "hi", 12, "hi", 7, 53]
 
@@ -31,7 +37,7 @@ function noDupes(nums, index = 0, noDuping = []) {
 
   // Check if the current element is not already in the noDuping array
   if (!noDuping.includes(currentNum)) {
-    // Use array spread to create a new array with the current element
+    // Use spread operator to create a new array with the current element
     const updatedArray = [...noDuping, currentNum];
 
     // Recursive call with the next index and the updated array
@@ -42,3 +48,7 @@ function noDupes(nums, index = 0, noDuping = []) {
   }
 }
 
+// WITH filter
+function noDupesFilter(nums) {
+  return nums.filter((num, index, array) => array.indexOf(num) === index);
+}

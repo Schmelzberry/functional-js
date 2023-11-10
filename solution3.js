@@ -1,6 +1,9 @@
 // Question #3: Compressing Strings
 // Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
 
+// Edge Cases 
+// special characters, users entering "3ab2c"
+
 // Example
 // Input: "aaabccdddda"
 
@@ -44,12 +47,12 @@ function stringCompress(input, index = 0, count = 1, currentChar = input[0], res
 }
 // Curry the function #1
 
-function curriedStringCompress2(input) {
+function curriedStringCompress(input) {
   return function(index) {
     return function(count) {
       return function(currentChar) {
         return function(result) {
-          return stringCompress2(input, index, count, currentChar, result);
+          return curriedStringCompress(input, index, count, currentChar, result);
         };
       };
     };
